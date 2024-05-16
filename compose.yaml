@@ -1,0 +1,14 @@
+services:
+  sqlserver_test:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-test
+    ports:
+      - ${SQLSERVER_PORT:-1434}:1433
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets
+      - ./dump:/dump
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: $SA_PASSWORD

@@ -1,0 +1,7 @@
+# Variaveis de ambiente
+.env
+
+# Persistência de dados host
+data/*
+log/*
+secrets/*
